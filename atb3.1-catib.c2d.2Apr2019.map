@@ -1,0 +1,916 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; MAP FILE FOR PATB to CATIB
+;; Copyright (c) 2010 Columbia University. All Rights Resereved.
+;; By Nizar Habash (habash@ccls.columbia.edu)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+###PARAMS###
+; NO=0 YES=1
+
+; debug print-outs
+debug = 0
+
+
+; Dependency tree printing options
+
+; show features in 6th column
+show_features = 1
+
+; add <tree> .. </tree> tags
+tree_tag = 0
+
+; add #SENTENCE number tags
+sentence_number = 0
+
+; print zero root node
+print_root = 0
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+###TAGMAP###
+
+;Indicate mapping from Buckwalter (ATB) POS tags to PennPOS and CATiB tags.
+;
+;FORMAT:  	  CATIB		  PennPOS	Buckwalter
+;
+; if CATIB is "DELETE" => delete node!
+
+;;;;;;;;;;;;;;;;
+
+DELETE	NONE	-NONE-
+
+;;;;;;;;;;;;;;;;
+
+PNX	NUMERIC_COMMA	NUMERIC_COMMA
+PNX	"	"
+PNX	,	,
+PNX	:	:
+PNX	.	.
+PNX	PUNC	;
+PNX	-LRB-	-LRB-
+PNX	-RRB-	-RRB-
+PNX	PUNC	PUNC
+
+;;;;;;;;;;;;;;;;
+
+PROP	DT+NNPS	DET+NOUN_PROP+NSUFF_MASC_DU*
+PROP	DT+NNPS	DET+NOUN_PROP+NSUFF_FEM_DU*
+PROP	DT+NNPS	DET+NOUN_PROP+NSUFF_MASC_PL*
+PROP	DT+NNPS	DET+NOUN_PROP+NSUFF_FEM_PL*
+
+PROP	DT+NNP	DET+ABBREV
+PROP	DT+NNP	DET+FOREIGN
+PROP	DT+NNP	DET+NOUN_PROP*
+
+PROP	NNPS	NOUN_PROP+NSUFF_MASC_DU*
+PROP	NNPS	NOUN_PROP+NSUFF_FEM_DU*
+PROP	NNPS	NOUN_PROP+NSUFF_MASC_PL*
+PROP	NNPS	NOUN_PROP+NSUFF_FEM_PL*
+
+PROP	NNP	ABBREV
+PROP	NNP	FOREIGN
+PROP	NNP	NOUN_PROP*
+
+;;;;;;;;;;;;;;;;
+
+NOM	DT+ADJ_COMP	DET+ADJ_COMP*
+
+NOM	ADJ_COMP	ADJ_COMP*
+
+NOM	DT+NOUN_QUANT	DET+NOUN_QUANT*
+
+NOM	NOUN_QUANT	NOUN_QUANT*
+
+NOM	DT+ADJ_NUM	DET+ADJ_NUM*
+
+NOM	ADJ_NUM	ADJ_NUM*
+
+NOM	DEM+NN	DEM+NOUN
+
+NOM	DEM	DEM*
+
+NOM	DT+CD	DET+NUM*
+
+NOM	CD	NUM*
+
+NOM	WP	INTERROG_PRON*
+NOM	WP	REL_PRON*
+
+NOM	WRB	INTERROG_ADV*
+NOM	WRB	REL_ADV*
+
+NOM	PRP$	POSS_PRON*
+
+NOM	PRP	CVSUFF_DO:*
+NOM	PRP	IVSUFF_DO:*
+NOM	PRP	PVSUFF_DO:*
+NOM	PRP	PRON*
+
+NOM	DT+NNS	DET+NOUN+NSUFF_MASC_DU*
+NOM	DT+NNS	DET+NOUN+NSUFF_FEM_DU*
+NOM	DT+NNS	DET+NOUN+NSUFF_MASC_PL*
+NOM	DT+NNS	DET+NOUN+NSUFF_FEM_PL*
+NOM	DT+NNS	DET+NOUN.VN+NSUFF_MASC_PL*
+NOM	DT+NNS	DET+NOUN.VN+NSUFF_FEM_PL*
+NOM	DT+NNS	DET+NOUN_NUM+NSUFF_MASC_DU*
+NOM	DT+NNS	DET+NOUN_NUM+NSUFF_FEM_DU*
+NOM	DT+NNS	DET+NOUN_NUM+NSUFF_MASC_PL*
+NOM	DT+NNS	DET+NOUN_NUM+NSUFF_FEM_PL*
+
+NOM	NNS	NOUN+NSUFF_MASC_DU*
+NOM	NNS	NOUN+NSUFF_FEM_DU*
+NOM	NNS	NOUN+NSUFF_MASC_PL*
+NOM	NNS	NOUN+NSUFF_FEM_PL*
+NOM	NNS	NOUN.VN+NSUFF_MASC_PL*
+NOM	NNS	NOUN.VN+NSUFF_FEM_PL*
+NOM	NNS	NOUN_NUM+NSUFF_MASC_DU*
+NOM	NNS	NOUN_NUM+NSUFF_FEM_DU*
+NOM	NNS	NOUN_NUM+NSUFF_MASC_PL*
+NOM	NNS	NOUN_NUM+NSUFF_FEM_PL*
+
+NOM	DT+NN	DET+NEG_PART+CASE_DEF_GEN
+NOM	DT+NN	DET+NOUN*
+NOM	DT+NN	DET+NOUN.VN*
+NOM	DT+NN	DET+NOUN_NUM*
+NOM	DT+NN	DET+PART+NOUN
+
+NOM	NN	NEG_PART+NOUN
+NOM	NN	NOUN.VN*
+NOM	NN	NOUN_NUM*
+NOM	NN	NOUN*
+NOM	NN	PART+NOUN
+
+NOM	DT+JJ	DET+ADJ_PROP*
+NOM	DT+JJ	DET+ADJ.VN*
+NOM	DT+JJ	DET+ADJ*
+NOM	DT+JJ	DET+INTERJ*
+NOM	DT+JJ	DET+NEG_PART+ADJ
+
+NOM	JJ	ADJ*
+NOM	JJ	ADJ_PROP*
+NOM	JJ	NEG_PART+ADJ*
+
+NOM	DT+RB	DET+ADV*
+
+NOM	RB	ADV*
+
+NOM	UH	INTERJ*
+
+NOM	DV	DV
+
+NOM	NON_ALPHABETIC	NON_ALPHABETIC
+
+NOM	NON_ARABIC	NON_ARABIC
+
+NOM	NOPOSTAG	NOPOSTAG
+
+NOM	DT+NN	DET+TYPO
+
+NOM	NN	NO_FUNC
+NOM	NN	DIALECT
+NOM	NN	GRAMMAR_PROBLEM
+NOM	NN	LATIN
+NOM	NN	TYPO
+
+NOM	PRP	PVSUFF_SUBJ:*
+
+;;;;;;;;;;;;;;;;
+
+PRT	IN	FUNC_WORD
+PRT	IN	PREP*
+
+PRT	DT	DET
+
+PRT	AN	CONNEC_PART
+PRT	AN	PSEUDO_VERB
+PRT	AN	SUB
+PRT	AN	SUB_CONJ*
+
+PRT	CC	CONJ
+
+PRT	RP	EMPHATIC_PART
+PRT	RP	EMPHATIC_PARTICLE
+PRT	RP	EMPH_PART
+PRT	RP	EXCEPT_PART
+PRT	RP	FOCUS_PART
+PRT	RP	FUT_PART
+PRT	RP	INTERROG_PART*
+PRT	RP	JUS_PART
+PRT	RP	NEG_PART*
+PRT	RP	PART
+PRT	RP	RC_PART
+PRT	RP	RESTRIC_PART
+PRT	RP	RESULT_CLAUSE_PARTICLE
+PRT	RP	SUBJUNC
+PRT	RP	VERB_PART
+
+PRT	UH	VOC_PART
+
+;;;;;;;;;;;;;;;;
+
+VRB-PASS	VBN	*IV_PASS*
+VRB-PASS	VBN	*PV_PASS*
+VRB-PASS	VBN	*VERB_PASSIVE*
+VRB-PASS	VBN	*VERB_PERFECT_PASSIVE*
+VRB-PASS	VBN	*VERB_IMPERFECT_PASSIVE*
+
+;;;;;;;;;;;;;;;;
+
+VRB	VB	CV*
+VRB	VB	VERB*
+VRB	VB	VERB_IMPERATIVE*
+
+VRB	VBD	NEG_PART+VERB_PERFECT*
+VRB	VBD	VERB_PERFECT*
+VRB	VBD	NEG_PART+PV*
+VRB	VBD	PV*
+
+VRB	VBP	IV*
+VRB	VBP	NEG_PART+IV*
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+###GRAMAP###
+
+;This section defines the various constituency to dependency
+;rules to use. To limit repition, we allow defintion of variable
+;terms.
+;Most cases are handled with a small number of rules. However,
+;since the PATB has numerous flat structures, conversion of these
+;cases requires lots of little rules.
+
+
+;FORMAT XP (<digit>:CATiB/PennPOS/BW)+ => <digit>:* /head ; else <digit>:<parent>,<rel>
+
+
+;<RULE> ::= <rule-id> <XP-condition> => <DEP-map>
+;<XP-condition>  ::= <XP> (<xp-sym>)+
+;<XP> ::= NP,PP,etc. || *  #star matches anything
+;<xp-sym> ::= ^          #initial marker
+;	     ..         #skip any number of words
+;	     <n>:<XP>   #match XP
+;	     <n>:<POS>  #match POS
+;	     <n>:* 	#match any
+;	     <n>:!!     #match head // can only apply as add on
+;<DEP-map> ::= <XP> <dep-sym>
+;<XP> ::=  NP,PP,etc. || *  #star matches whatever is matched in XP-condition .. but can extend
+;<dep-sym> ::= <n>:0  	     #head
+;	      <n>:<m>,<rel>  #<m> is parent of <n> and <rel> is their relation label
+
+;#since matching on left side is partial ... *s are used in right side to copy original.
+
+;Types of rules
+
+; M1: Main
+; A1: Add only once (SBJ or IDF); initial PRT..
+; An: Add many times
+
+;; put singleton explicit default for completeness?
+
+;; BACKOFF is only allowed for singletons that fail any other singleton matching and that are well formed [not result of an earlier mismatch]
+
+
+DEFINE @XP@ (NOM|PROP|NP|VP|PP|ADJP|SBAR|S-NOM|S|FRAG)
+
+DEFINE @CC@ (PRT/CC|CONJP)
+
+
+DEFINE @S@ (S|SQ)
+
+DEFINE @TPC@ (NP-TPC|ADJP-TPC|SBAR-NOM-TPC|SBAR-TPC|S-NOM-TPC|S-TPC)
+
+DEFINE @SBJ@ (NP-SBJ|NP-TPC-SBJ|NP-TTL-SBJ|NP-VOC-SBJ|S-NOM-SBJ|S-NOM-TPC-SBJ|S-SBJ|S-TTL-SBJ|SBAR-NOM-SBJ|SBAR-NOM-TPC-SBJ|SBAR-SBJ|SBAR-TPC-SBJ|SQ-SBJ|UCP-SBJ)
+
+DEFINE @PRD@ (ADJP-PRD|ADJP-TPC-PRD|ADVP-LOC-PRD|ADVP-PRD|ADVP-TPC-MNR-PRD|ADVP-TPC-PRD|ADVP-VOC-PRD|INTJ-PRD|NP-ADV-PRD|NP-LOC-PRD|NP-MNR-PRD|NP-PRD|NP-PRD|NP-PRP-PRD|NP-TMP-PRD|NP-TPC-PRD|NP-TTL-PRD|PP-LOC-PRD|PP-MNR-PRD|PP-PRD|PP-PRP-PRD|PP-TMP-PRD|PP-TPC-PRD|SBAR-NOM-PRD|SBAR-PRD|SBAR-TMP-PRD|S-NOM-PRD|S-PRD|SQ-PRD|S-TTL-PRD|UCP-PRD|UCP-TMP-PRD)
+
+
+
+;; CONJUNCTIONS
+
+;;ellipsis with conjunctions
+
+;( HmlwA w+ yHmlwn ms&wlyp)
+M1 @S@ 1:@S@ 2:@CC@ 3:@S@ 4:NP-OBJ	=> * 1:0 2:1,MOD 3:2,OBJ 4:1,OBJ
+
+;( kAnt w+ tbqY mE)
+M1 @S@ 1:@S@ 2:@CC@ 3:@S@ 4:NP-PRD	=> * 1:0 2:1,MOD 3:2,OBJ 4:1,PRD
+
+;( ktbt w+ nf* HkAm)
+M1 SBAR 1:SBAR 2:@CC@ 3:SBAR 4:NP-SBJ	=> * 1:0 2:1,MOD 3:2,OBJ 4:1,SBJ
+
+;; Numbers/NPS
+;;( 27 w 28 |*Ar)//( 29 w 30 kAnwn)//( 3 >w 4 >$hr)//( 3 w 4 mlAyyn)
+;;( >wl w+ |xr mrp)
+M1 (NP|ADJP|FRAG) 1:NOM 2:@CC@ 3:NOM 4:NP	=> * 1:0 2:1,MOD 3:2,OBJ 4:1,IDF
+
+
+
+M1 CONJP 1:PRT 2:PRT	=> * 1:0 2:1,MOD
+
+M1 * 1:@XP@ 2:@CC@ 3:@XP@ 4:@CC@ 5:@XP@ 6:@CC@ 7:@XP@ 8:@CC@ 9:@XP@ 10:@CC@ 11:@XP@ 12:@CC@ 13:@XP@ 14:@CC@ 15:@XP@	=> * 1:0 2:1,MOD 3:2,OBJ 4:3,MOD 5:4,OBJ 6:5,MOD 7:6,OBJ 8:7,MOD 9:8,OBJ 10:9,MOD 11:10,OBJ 12:11,MOD 13:12,OBJ 14:13,MOD 15:14,OBJ
+
+M1 * 1:@XP@ 2:@CC@ 3:@XP@ 4:@CC@ 5:@XP@ 6:@CC@ 7:@XP@ 8:@CC@ 9:@XP@ 10:@CC@ 11:@XP@ 12:@CC@ 13:@XP@	=> * 1:0 2:1,MOD 3:2,OBJ 4:3,MOD 5:4,OBJ 6:5,MOD 7:6,OBJ 8:7,MOD 9:8,OBJ 10:9,MOD 11:10,OBJ 12:11,MOD 13:12,OBJ
+
+M1 * 1:@XP@ 2:@CC@ 3:@XP@ 4:@CC@ 5:@XP@ 6:@CC@ 7:@XP@ 8:@CC@ 9:@XP@ 10:@CC@ 11:@XP@	=> * 1:0 2:1,MOD 3:2,OBJ 4:3,MOD 5:4,OBJ 6:5,MOD 7:6,OBJ 8:7,MOD 9:8,OBJ 10:9,MOD 11:10,OBJ
+
+M1 * 1:@XP@ 2:@CC@ 3:@XP@ 4:@CC@ 5:@XP@ 6:@CC@ 7:@XP@ 8:@CC@ 9:@XP@	=> * 1:0 2:1,MOD 3:2,OBJ 4:3,MOD 5:4,OBJ 6:5,MOD 7:6,OBJ 8:7,MOD 9:8,OBJ
+
+;;( " <ntlsAt " w " ErbsAt ")//( " ftH " w " HmAs ")//( " wynrz " w " bytzAhAt ")//( " tAym " w " nywzwyk ")
+M1 * 1:PNX 2:PROP 3:PNX 4:@CC@ 5:PNX 6:PROP 7:PNX	=> * 1:2,MOD 2:0 3:2,MOD 4:2,MOD 5:6,MOD 6:4,OBJ 7:6,MOD
+
+
+M1 * 1:@XP@ 2:PNX 3:@CC@ 4:@XP@ 5:PNX 6:@CC@ 7:@XP@ 8:PNX 9:@CC@ 10:@XP@     	=> * 1:0 2:1,MOD 3:1,MOD 4:3,OBJ 5:4,MOD 6:4,MOD 7:6,OBJ 8:7,MOD 9:7,MOD 10:9,OBJ
+M1 * 1:@XP@ 2:@CC@ 3:@XP@ 4:@CC@ 5:@XP@ 6:@CC@ 7:@XP@	       			=> * 1:0         2:1,MOD 3:2,OBJ         4:3,MOD 5:4,OBJ         6:5,MOD 7:6,OBJ
+
+M1 * 1:@XP@ 2:PNX 3:@CC@ 4:@XP@ 5:PNX 6:@CC@ 7:@XP@	     	=> * 1:0 2:1,MOD 3:1,MOD 4:3,OBJ 5:4,MOD 6:4,MOD 7:6,OBJ
+M1 * 1:@XP@ 2:@CC@ 3:@XP@ 4:@CC@ 5:@XP@	     		=> * 1:0         2:1,MOD 3:2,OBJ         4:3,MOD 5:4,OBJ
+
+M1 * 1:@XP@ 2:PNX 3:@CC@ 4:@XP@				=> * 1:0 2:1,MOD 3:1,MOD 4:3,OBJ
+M1 * 1:@XP@       2:@CC@ 3:@XP@				=> * 1:0         2:1,MOD 3:2,OBJ
+
+
+;;;;;;;;;;;;;
+
+M1 LST 1:NOM	 	=> * 1:0
+M1 LST 1:PROP	 	=> * 1:0
+M1 LST 1:PNX	 	=> * 1:0
+
+
+;; why two different ways:
+;;( AlbAkstAnyp - Alhndyp)
+M1 ADJP 1:NOM 2:PNX 3:NOM	=> ADJP 1:0 2:3,MOD 3:1,MOD
+;;( gA}mA , SAfyA)//( Al>myrkyp - Al<srA}ylyp)//( rqyqp , wADHp)//( mtnwE , mtEdd)
+M1 ADJP 1:ADJP 2:PNX 3:ADJP	=> ADJP 1:0 2:3,MOD 3:1,MOD
+
+
+M1 ADJP 1:NOM 2:NP	=> * 1:0 2:1,IDF
+M1 ADJP 1:NOM 2:SBAR-NOM	=> * 1:0 2:1,IDF
+
+M1 ADJP 1:ADJP		=> * 1:0
+M1 ADJP 1:NOM		=> * 1:0
+M1 ADJP 1:PROP 		=> * 1:0
+
+An ADJP ^ 1:PRT 2:!!	=> * 1:2,MOD 2:0
+An ADJP 1:!! 2:NOM	=> * 1:0 2:1,MOD
+An ADJP 1:!! 2:PROP	=> * 1:0 2:1,MOD
+An ADJP 1:!! 2:ADJP	=> * 1:0 2:1,MOD
+
+
+
+;;HEAD PERC...
+M1 PRN  1:S		=> * 1:0
+M1 PRN  1:VP		=> * 1:0
+M1 PRN  1:NP		=> * 1:0
+M1 PRN  1:SBAR		=> * 1:0
+M1 PRN  1:PP		=> * 1:0
+M1 PRN  1:ADVP		=> * 1:0
+M1 PRN  1:ADJP		=> * 1:0
+
+
+;;;;;;;; PP ;;;;;;;;;;;;;;;;;
+
+;; ODD PPs!
+
+;;( rbmA >yDA ElY dA')
+M1 PP 1:ADVP 2:ADVP 3:PRT/IN/PREP 4:NP	   	=> * 1:0 2:1,MOD 3:1,MOD 4:3,OBJ
+
+;;( xSwSA mn* EAm) // ( vAnyA b+ AstSdAr) // ( <yjAbA ElY AqtrAH) // ( swA' mn Hyv)
+;;( >wlA , b+ <EAdp)//( xSwSA , mn +mn)//( xSwSA b+ Alnsbp .)
+M1 PP 1:NP-ADV .. 2:PRT/IN/PREP 3:NP		=> * 1:0 2:1,MOD 3:2,OBJ
+M1 PP 1:NP-ADV .. 2:PRT/IN/PREP 3:S-NOM	      	=> * 1:0 2:1,MOD 3:2,OBJ
+M1 PP 1:NP-ADV .. 2:PRT/IN/PREP 3:SBAR-NOM	=> * 1:0 2:1,MOD 3:2,OBJ
+M1 PP 1:NP-ADV .. 2:PRT/IN/PREP 3:SBAR-ADV	=> * 1:0 2:1,MOD 3:2,OBJ
+M1 PP 1:NP-TMP .. 2:PRT/IN/PREP 3:NP	   	=> * 1:0 2:1,MOD 3:2,OBJ
+
+;; ( Hl mn )
+M1 PP 1:NP 2:PP	   	=> * 1:0 2:1,MOD
+
+
+;; ( swY b+ mEAyyr)
+M1 PP 1:PRN 2:PRT/IN/PREP 3:NP	   	=> * 1:0 2:1,MOD 3:2,OBJ
+
+;;( fqT l+ >n)//( rbmA l+ >n)
+M1 PP 1:ADVP .. 2:PRT/IN/PREP 3:SBAR	   	=> * 1:0 2:1,MOD 3:2,OBJ
+;;( >yDA ElY Alkwyt)
+M1 PP 1:ADVP .. 2:PRT/IN/PREP 3:NP	   	=> * 1:0 2:1,MOD 3:2,OBJ
+
+;;( mn* , 1994)//( mn " >sw>)
+M1 PP 1:PRT/IN/PREP 2:PNX 3:NP	   => * 1:0 2:3,MOD 3:1,OBJ
+
+;;( l " AlnhAr ")
+M1 PP 1:PRT/IN/PREP 2:PNX 3:NP 4:PNX	   => * 1:0 2:3,MOD 3:1,OBJ 4:3,MOD
+
+;;( fy AlbyAn AlmwqE)
+M1 PP 1:PRT/IN/PREP 2:NP 3:SBAR	   => * 1:0 2:1,OBJ 3:2,MOD
+
+;; ( l+ AEtrAD xArj)//( l+ AlkfAH Dd)
+M1 PP 1:PRT/IN/PREP 2:NP 3:NP-LOC	   	=> * 1:0 2:1,OBJ 3:2,MOD
+M1 PP 1:PRT/IN/PREP 2:NP 3:NP-ADV	   	=> * 1:0 2:1,OBJ 3:2,MOD
+
+;;Addition on Jan 2017
+M1 PP 1:PP 2:NP-ADV	   	=> * 1:0 2:1,MOD
+
+;;( k+ Al>byD AlmtnAvr)
+M1 PP 1:PRT/IN/PREP 2:NP 3:ADJP	   	=> * 1:0 2:1,OBJ 3:2,MOD
+
+;;TYPOS:( mn w+ dwn)
+M1 PP 1:PRT/IN/PREP 2:NOM/NN/TYPO 3:NP	   	=> * 1:0 2:1,OBJ 3:2,OBJ
+
+;;GENERAL CASE
+;; odd:
+M1 PP 1:PRT/IN/PREP 2:PRT/IN/PREP 3:NP	   => * 1:0 2:1,OBJ 3:2,OBJ
+
+M1 PP 1:PRT/IN/PREP 2:NP	   => * 1:0 2:1,OBJ
+M1 PP 1:PRT/IN/PREP 2:SBAR     	   => * 1:0 2:1,OBJ
+M1 PP 1:PRT/IN/PREP 2:S-NOM        => * 1:0 2:1,OBJ
+M1 PP 1:PRT/IN/PREP 2:ADVP        => * 1:0 2:1,OBJ
+M1 PP 1:PRT/IN/PREP 2:S        	  => * 1:0 2:1,OBJ
+M1 PP 1:PRT/IN/PREP 2:PP      	  => * 1:0 2:1,OBJ
+M1 PP 1:PRT/IN/PREP 2:UCP      	  => * 1:0 2:1,OBJ
+
+M1 PP 1:PP .. 2:PP     		  => * 1:0 2:1,MOD
+
+
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;PUNC needs more work!!
+
+M1 WHPP 1:PRT/IN/PREP 2:WHADVP	   => * 1:0 2:1,OBJ
+M1 WHPP 1:PRT/IN/PREP 2:WHNP	   => * 1:0 2:1,OBJ
+
+
+
+
+;;;;;;;;;;
+
+M1 SBAR 1:PRT/AN .. 2:NP-TPC-SBJ .. 3:S	=> SBAR 1:0 2:1,SBJ 3:2,PRD
+M1 SBAR 1:PRT/AN 2:(S|UCP|FRAG)		=> * 1:0 2:1,OBJ
+
+;;RELATIVE CLAUSE
+M1 SBAR 1:WHADVP .. 2:(S|UCP|FRAG)		=> * 1:0 2:1,MOD
+M1 SBAR 1:WHNP ..  2:(S|UCP|FRAG)		=> * 1:0 2:1,MOD
+M1 SBAR 1:S			=> * 1:0
+M1 SBAR 1:SBAR .. 2:SBAR		=> * 1:0 2:1,MOD
+M1 SBAR 1:SBAR 		=> * 1:0
+
+
+;; Interrogatives
+M1 SBARQ 1:NP-TPC-SBJ 2:WHADVP 3:S	=> SBARQ 1:2,SBJ 2:3,MOD 3:0
+M1 SBARQ 1:PRT/AN 2:S		=> * 1:0 2:1,OBJ
+M1 SBARQ 1:PRT/AN 2:UCP		=> * 1:0 2:1,OBJ
+M1 SBARQ 1:WHADVP .. 2:S		=> * 1:2,MOD 2:0
+M1 SBARQ 1:WHNP .. 2:S		=> * 1:2,MOD 2:0
+M1 SBARQ 1:S			=> * 1:0
+M1 SBARQ 1:SBAR	.. 2:SBAR	=> * 1:0 2:1,MOD
+
+
+;; order so that it makes sense.
+;; have backoff mode...
+
+;; VERB PHRASE
+
+;; kwn+h $AErA
+
+M1 VP 1:NOM 2:NP-SBJ 3:NP-PRD-ACC	=> NP 1:0 2:1,IDF 3:1,PRD
+
+;;error ( +h ywSl)//( kl ydAfE)//( Alt$ryEAt yjb)//( blAtr dfE)
+M1 VP 1:NP-TPC-SBJ 2:VP	=> VP 1:2,SBJ 2:0
+
+;;( TAl AntZAr +h EqwdA) // special?
+M1 VP 1:VRB 2:NOM/NN/NOUN.VN 3:NP-SBJ 4:NP-TMP	=> VP 1:0 2:1,SBJ 3:2,IDF 4:1,MOD
+
+;;   ( ttx* <slAm mqrA)
+M1 VP 1:VRB 2:NP-OBJ-SBJ 3:S	=> * 1:0 2:1,OBJ 3:1,OBJ
+
+
+M1 VP 1:VRB .. 2:VP	=> * 1:0 2:1,PRD
+
+M1 VP 1:PRT 2:VRB	=> * 1:2,MOD 2:0
+
+M1 VP 1:VRB			=> * 1:0
+M1 VP 1:PRT/AN/PSEUDO_VERB	=> * 1:0
+
+
+;;BUGS
+M1 VP 1:NOM/NN/TYPO		=> * 1:0
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; DEVERBAL (perhaps mark kwn from none)
+;;( Sfp +hA qwp)//( <ZhAr +nA wjh)//( kwn +h TAlbA)//( kwn +h EDwA)
+;;( AldfAE En)//( AltwSl <lY)//( AlATm}nAn <lY)//( Almtjhp <lY)
+;;( mHAwlAt $Arwn >sqAT)//( mHAwlAt +h <DEAf)
+;;( kwn +h gAmDA)//( <ElAn +h wjwd)
+;; ...
+
+
+DEFINE @DTDV@ (NOM/DT+NN/DET+NOUN.VN|NOM/DT+NNS/DET+NOUN.VN|NOM/DT+JJ/DET+ADJ.VN|NOM/DT)
+DEFINE @DV@   (NOM/NN/NOUN.VN|NOM/NNS/DET+NOUN.VN|NOM/JJ/ADJ.VN|NOM)
+
+M1 VP ^ 1:@DTDV@ .. 2:NP-SBJ	=> * 1:0 2:1,SBJ
+M1 VP ^ 1:@DTDV@ .. 2:NP-OBJ	=> * 1:0 2:1,OBJ
+M1 VP ^ 1:@DTDV@ 2:ADJP-PRD		=> * 1:0 2:1,PRD
+M1 VP ^ 1:@DTDV@ 			=> * 1:0
+
+
+M1 VP ^ 1:@DV@ 2:NP-SBJ .. 3:NP-OBJ	=> * 1:0 2:1,IDF 3:1,OBJ
+M1 VP ^ 1:@DV@ 2:NP-DTV 3:NP-OBJ	=> * 1:0 2:1,IDF 3:1,OBJ
+
+M1 VP ^ 1:@DV@ .. 2:NP-OBJ	=> * 1:0 2:1,OBJ
+M1 VP ^ 1:@DV@ .. 2:NP-ADV	=> * 1:0 2:1,MOD
+M1 VP ^ 1:@DV@ .. 2:NP-DTV	=> * 1:0 2:1,IDF
+M1 VP ^ 1:@DV@ .. 2:NP-SBJ	=> * 1:0 2:1,IDF
+
+M1 VP ^ 1:@DV@ 2:NP-SBJ 3:NP-PRD	=> * 1:0 2:1,IDF 3:1,PRD
+M1 VP ^ 1:@DV@ 2:NP .. 3:VP	=> * 1:0 2:1,IDF 3:1,PRD
+M1 VP ^ 1:@DV@ 2:NP => * 1:0 2:1,IDF
+M1 VP ^ 1:@DV@  => * 1:0
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ellipsis
+
+;;( l+ AlbrAzyly fy)//( l+ <yAd fy)//( l+ jmAl fy)//( l+ byAr fy)
+M1 VP 1:PP 2:NP-SBJ 3:PP-TMP	=> * 1:0 2:1,SBJ 3:1,MOD
+
+M1 VP 1:NP-TMP 2:NP 3:NP-TMP	=> * 1:3,MOD 2:3,SBJ 3:0
+
+;;( kwbrylwA 6 74)//( AlyAnzA 1 011)//( fylyz 5 55)//( sbwrtng $y' 39)
+M1 VP 1:NP-SBJ 2:NP-ADV 3:ADVP	=> * 1:2,SBJ 2:0 3:2,MOD
+
+M1 VP 1:NP-SBJ 2:NP-PRD		=> * 1:2,SBJ 2:0
+M1 VP 1:NP-SBJ 2:PP-PRD		=> * 1:2,SBJ 2:0
+M1 VP 1:NP-OBJ 2:S		=> * 1:2,SBJ 2:0
+;;( bsAm nA}bA)//( mSTfY >mynA)//( bdr >myn)//( Ely >mynA)
+;;( >ms wzyr ldY)
+M1 VP 1:NP 2:NP-OBJ		=> * 1:2,SBJ 2:0
+M1 VP 1:NP 2:NP-TMP		=> * 1:2,SBJ 2:0
+
+;;( mzArE <lY)
+M1 VP 1:NP-SBJ 2:PP-CLR		=> * 1:2,SBJ 2:0
+
+
+M1 VP 1:VP     			=> * 1:0
+
+A1 VP 1:!! .. 2:@SBJ@		=> * 1:0 2:1,SBJ
+
+A1 VP 1:!! .. 2:@PRD@		=> * 1:0 2:1,PRD
+A1 VP 1:@PRD@ .. 1:!!		=> * 1:2,PRD 2:0
+
+A1 VP 1:!!VRB .. 2:ADJP		=> * 1:0 2:1,PRD
+A1 VP 1:ADJP .. 1:!!VRB		=> * 1:2,PRD 2:0
+
+An VP 1:!! .. 2:NP-OBJ		=> * 1:0 2:1,OBJ
+An VP 1:!! .. 2:NP   		=> * 1:0 2:1,MOD
+
+An VP 1:!! .. 2:(SBAR-TMP|SBAR-LOC|SBAR-MNR)   	=> * 1:0 2:1,MOD
+A1 VP 1:!! .. 2:SBAR		=> * 1:0 2:1,OBJ
+
+An VP 1:!! .. 2:UCP		=> * 1:0 2:1,OBJ
+An VP 1:!! .. 2:SQ		=> * 1:0 2:1,MOD
+An VP 1:!! .. 2:S		=> * 1:0 2:1,MOD
+An VP 1:!! .. 2:ADVP		=> * 1:0 2:1,MOD
+
+
+
+;;Added in January 2017 - handles a weird structure
+M1 @S@ 1:PNX 2:@S@ 3:PNX 4:@S@ 5:@S@ 6:@CC@ 7:@S@ 8:PNX 9:@S@ 10:@CC@ 11:@S@ 12:PNX => * 1:2,MOD 2:0 3:2,MOD 4:2,MOD 5:4,MOD 6:2,MOD 7:6,OBJ 8:2,MOD 9:2,MOD 10:2,MOD 11:10,OBJ 12:2,MOD
+
+M1 @S@ 1:@S@ .. 2:@S@ .. 3:@CC@ .. 4:@S@  => * 1:0 2:1,MOD 3:2,MOD 4:3,OBJ
+
+M1 @S@ 1:@S@ .. 2:@S@		=> * 1:0 2:1,MOD
+
+M1 @S@ 1:PRT/AN 2:NP-TPC .. 3:VP	=> * 1:0 2:1,SBJ 3:1,PRD
+
+M1 @S@ 1:PRT/AN 2:NP-SBJ 3:S 	=> * 1:0 2:1,SBJ 3:1,PRD
+
+M1 @S@ 1:PRT/AN 2:NP-SBJ 3:@PRD@ 	=> * 1:0 2:1,SBJ 3:1,PRD
+
+M1 @S@ 1:PRT/AN/SUB_CONJ 2:VP		=> * 1:0 2:1,OBJ
+
+M1 @S@ 1:@S@ .. 2:@CC@ .. 3:@S@	=> * 1:0 2:1,MOD 3:2,OBJ
+M1 @S@ 1:NP-TPC-SBJ .. 2:VP		=> * 1:2,SBJ 2:0
+M1 @S@ 1:@TPC@ .. 2:VP			=> * 1:2,TPC 2:0
+
+M1 @S@ 1:VP 	=> * 1:0
+M1 @S@ 1:@PRD@	=> * 1:0
+M1 @S@ 1:@S@	=> * 1:0
+
+;guessed head
+;( hy Al|n)
+M1 @S@ 1:NP-SBJ 2:NP-TMP	=> * 1:2,SBJ 2:0
+
+;( l+ AltfwyD l+)
+M1 @S@ 1:NP-SBJ 2:PP-PRP	=> * 1:2,SBJ 2:0
+M1 @S@ 1:NP-SBJ 2:NP-PRP	=> * 1:2,SBJ 2:0
+
+; ADD ONS
+A1 @S@ 1:@SBJ@ .. 2:!!		=> * 1:2,SBJ 2:0
+A1 @S@ 1:!! .. 2:@SBJ@		=> * 1:0 2:1,SBJ
+
+A1 @S@ 1:NP-TMP .. 2:!!		=> * 1:2,MOD 2:0
+A1 @S@ 1:!! .. 2:NP-TMP		=> * 1:0 2:1,MOD
+A1 @S@ 1:ADVP .. 2:!!		=> * 1:2,MOD 2:0
+A1 @S@ 1:!! .. 2:ADVP		=> * 1:0 2:1,MOD
+A1 @S@ 1:NP-ADV .. 2:!!		=> * 1:2,MOD 2:0
+A1 @S@ 1:!! .. 2:NP-ADV		=> * 1:0 2:1,MOD
+
+A1 @S@ 1:@TPC@ .. 2:!!		=> * 1:2,TPC 2:0
+
+A1 @S@ 1:@PRD@ .. 2:!!		=> * 1:2,PRD 2:0
+
+
+
+
+;;;;;NP
+
+;; NUMBERS
+;; different ways in ATB... why!!?? NORMALIZE NUMS
+;; distinguish some cases here .. E$r
+
+
+;;( Alqrn AltAsE E$r)//( Alqrn AlsAbE E$r)//( Alywm AlxAms E$r)//( Almxym AlvAny E$r)
+M1 NP 1:NOM/DT+NN 2:NOM/DT+ADJ_NUM 3:NOM/NN/NOUN	=> NP 1:0 2:1,MOD 3:2,---
+
+;;( AlrAbE E$r)//( AltAsE E$r)//( AlvAlv E$r)
+;;( AlHAdyp E$rp)
+M1 NP 1:NOM/DT+ADJ_NUM 2:NOM/NN/NOUN	=> NP 1:0 2:1,---
+M1 NP 1:NOM/DT+JJ 2:NOM/NN		=> NP 1:0 2:1,---
+
+;;( AltAsEp SbAHA)
+M1 NP 1:NOM/DT+ADJ_NUM 2:NOM/NN/NOUN	=> NP 1:0 2:1,MOD
+
+;;( m}p w+ E$ryn mtrA)//( m}p w+ vmAnyn mtrA)//( m}p w+ xmsyn mdrsp)//( wAHd w+ E$ryn dwlp)
+;;( sbEp w+ E$ryn EAmA)
+;;( st w+ stwn rsmp)
+;;( m}tyn w+ xmsyn $xSyp)
+;;( vmAn w+ >rbEyn sAEp)//( wAHd w+ >rbEyn fSlA)
+;;( mlyArA w 498 mlywnA)//( mlyAr w 326 mlywnA)
+;;( Avnyn w+ sbEyn EAmA)
+;;( Alm}p w+ vlAvyn sntymtrA)
+
+M1 NP 1:NOM/NN/NOUN_NUM 2:PRT/CC/CONJ 3:NOM/NNS/NOUN 4:NP-ACC	=> NP 1:0 2:1,MOD 3:2,OBJ 4:3,TMZ
+M1 NP 1:NOM/NN/NOUN_NUM 2:PRT/CC/CONJ 3:NOM/NNS/NOUN_NUM 4:NP	=> NP 1:0 2:1,MOD 3:2,OBJ 4:3,TMZ
+M1 NP 1:NOM/NNS/NOUN_NUM 2:PRT/CC/CONJ 3:NOM/NNS/NOUN 4:NP-ACC	=>  NP 1:0 2:1,MOD 3:2,OBJ 4:3,TMZ
+M1 NP 1:NOM/NN/NOUN 2:PRT/CC/CONJ 3:NOM/NNS/NOUN_NUM 4:NP-ACC	=>  NP 1:0 2:1,MOD 3:2,OBJ 4:3,TMZ
+M1 NP 1:NOM/NN/NOUN 2:PRT/CC/CONJ 3:NOM/NN/NOUN_NUM 4:NP	=> NP 1:0 2:1,MOD 3:2,OBJ 4:3,TMZ
+M1 NP 1:NOM/DT+NN/DET+NOUN 2:PRT/CC/CONJ 3:NOM/NNS/NOUN_NUM 4:NP-ACC => NP 1:0 2:1,MOD 3:2,OBJ 4:3,TMZ
+
+;;( >lf w+ xmsmAyp Swrp)
+;; this doesn't fire.... need better system....
+M1 NP 1:NOM/NN/NOUN_NUM 2:PRT/CC/CONJ 3:NOM/NN/NOUN 4:NP	=>  NP 1:0 2:1,MOD 3:2,OBJ 4:3,IDF
+
+;;( 18 w 19 w 20 t$ryn)//( 20 w 21 w 22 $bAT)
+M1 NP 1:NOM/NN/NOUN_NUM 2:PRT/CC/CONJ 3:NOM/NN/NOUN_NUM 4:PRT/CC/CONJ 5:NOM/NN/NOUN_NUM 6:NP	=> NP 1:0 2:1,MOD 3:2,OBJ 4:3,MOD 5:4,OBJ 6:1,MOD
+
+;;( 29 w 30 kAnwn)//( 1513.50 w 1514.00 lyrp)//( 14 w 17 snp)//( 13 w 14 snp)
+M1 NP 1:NOM/NN/NOUN_NUM 2:PRT/CC/CONJ 3:NOM/NN/NOUN_NUM 4:NP-ACC	=> NP 1:0 2:1,MOD 3:2,OBJ 4:1,MOD
+
+
+;;( xmsp E$r TAlbA)//( sbEp E$r AHtfAlA)
+;;( vlAv E$rp snp)
+M1 NP 1:NOM/NN/NOUN_NUM 2:NOM/NN/NOUN_NUM 3:NP-ACC	=> NP 1:0 2:1,--- 3:1,TMZ
+M1 NP 1:NOM/NN/NOUN_NUM 2:NOM/NN/NOUN 3:NP-ACC		=> NP 1:0 2:1,--- 3:1,TMZ
+
+
+;;( 20 mnSp <TlAq)
+M1 NP 1:NOM/NN/NOUN_NUM 2:NOM 3:NP	=> NP 1:0 2:1,TMZ 3:2,IDF
+
+;;( 76 81)
+M1 * 1:NOM/NN/NOUN_NUM 2:NOM/NN/NOUN_NUM	=> * 1:0 2:1,---
+
+;;( 2 , 2)//( 55 , 0)//( 46 , 2)//( 32 - 16)
+1:83 M1 ADVP 1:NOM/NN/NOUN_NUM 2:PNX 3:NOM/NN/NOUN_NUM	=> * 1:0 2:1,--- 3:2,---
+
+
+;; MONTH NAMES....
+
+DEFINE @NP@ (NP|FRAG)
+
+;;; NP-VOC
+
+M1 @NP@ 1:PRT-VOC 2:PROP 3:PROP	=> * 1:0 2:1,OBJ 3:2,---
+
+M1 @NP@ 1:PRT-VOC 2:(PROP|NOM) 3:NP	=> * 1:0 2:1,OBJ 3:2,IDF
+
+M1 @NP@ 1:PRT-VOC 2:(PROP|NOM) 3:(NOM|ADJP)	=> * 1:0 2:1,OBJ 3:2,MOD
+
+M1 @NP@ 1:PRT-VOC 2:(PROP|NOM|NP|ADJP)	=> * 1:0 2:1,OBJ
+
+
+
+
+
+
+
+
+;; still lots of flat structures!!! + incorrect tags...
+
+
+; Al$yx Ebd Almlk bn kAyd AlqAsmy
+M1 @NP@ 1:NOM 2:PROP 3:PROP 4:PROP 5:PROP 6:PROP => * 1:0 2:1,MOD 3:2,--- 4:3,--- 5:4,--- 6:5,MOD
+M1 @NP@ 1:PROP 2:PROP 3:PROP 4:PROP 5:PROP  => * 1:0 2:1,--- 3:2,--- 4:3,--- 5:4,---
+
+;;( " <m . ty . Vy ")//( " t . <n . ty ")
+M1 @NP@ 1:PROP 2:PNX 3:PROP 4:PNX 5:PROP => * 1:0 2:1,--- 3:2,--- 4:3,--- 5:4,---
+
+;;( AlEmyd Alrkn jAn nASyf)//( AlEmyd AlTyAr drwy$ Hbyqp)//( AllwA' Alrkn AdwAr mnSwr)//( AlEqyd Alrkn mHmd mflH)
+M1 @NP@ 1:NOM 2:NOM 3:PROP 4:PROP	 => * 1:0 2:1,MOD 3:1,--- 4:3,---
+
+;; Almlk EbdAllh AlvAny bn AlHsyn
+M1 @NP@ 1:NOM 2:PROP 3:PROP 4:PROP 5:PROP  => * 1:0 2:1,MOD 3:2,--- 4:3,--- 5:4,---
+M1 @NP@ 1:PROP 2:PROP 3:PROP 4:PROP	  => * 1:0 2:1,--- 3:2,--- 4:3,---
+
+; Al$yx jAbr AlAHmd AlSbAH
+M1 @NP@ 1:NOM 2:PROP 3:PROP 4:PROP	  => * 1:0 2:1,MOD 3:2,--- 4:3,---
+M1 @NP@ 1:PROP 2:PROP 3:PROP	      	  => * 1:0 2:1,--- 3:2,---
+
+
+;;( twrbydw - zyl mwskw)//( jAn - byAr rAfArAn)//( jAn - byAr kAbstAn)
+M1 NP 1:PROP 2:PNX 3:PROP 4:PROP	=> * 1:0 2:1,--- 3:2,--- 4:3,---
+
+;;( Almhnds jAn - lwy qrdAHy)//( Almst$Ar lwy - frAnsyskw rwdrygyz)
+M1 NP 1:NOM 2:PROP 3:PNX 4:PROP 5:PROP	=> * 1:0 2:1,MOD 3:2,--- 4:3,--- 5:4,---
+
+
+; Aldktwr wlyd AlmEAny
+M1 @NP@ 1:NOM 2:PROP 3:PROP	      	  => * 1:0 2:1,MOD 3:2,---
+
+;;( tyry rwd - lArsn)//( mAr jrjs - Ewkr)//( mAr jrjs - EkAr)//( kym Awn - ywng)
+M1 @NP@ 1:PROP 2:PROP 3:PNX 4:PROP	=> * 1:0 2:1,--- 3:2,--- 4:3,---
+
+; rwd - lArsn
+M1 @NP@ 1:PROP 2:PNX 3:PROP		  => * 1:0 2:1,--- 3:2,---
+
+; Alr}ys lHwd
+M1 @NP@ 1:NOM 2:PROP			 => * 1:0 2:1,MOD
+
+;;( rynw - 12)//( bArys - 2)//( dby - 2)//( zgrtA , 2002)???
+M1 @NP@ 1:PROP 2:PNX 3:NOM 	=> * 1:0 2:1,MOD 3:2,MOD
+
+;;( sydny 2000)//( fylAdlfyA 76)//( " lbnAn 2002 ")//( " kAk 40 ")//( mHmd drp)//( mElqp >rADy)
+M1 @NP@ 1:PROP 2:NOM 	=> * 1:0 2:1,MOD
+
+; Alr}ys " lHwd "
+M1 @NP@ 1:NOM 2:PNX 3:PROP 4:PNX		 => * 1:0 2:3,MOD 3:1,MOD 4:3,MOD
+
+M1 @NP@ 1:PROP 2:PROP			  => * 1:0 2:1,---
+
+;;( jAbr Alxyr)//( |b 2000)//( m$rf 1999)//( lHwd 1993)//( " Hzb Allh ")//( " TAbq Almr ")
+M1 @NP@ 1:PROP 2:NP	=> * 1:0 2:1,IDF
+
+M1 @NP@ 1:PROP			      	  => * 1:0
+
+
+
+
+
+
+M1 @NP@ 1:NOM/DEM				=> *-DEM 1:0
+
+M1 @NP@ 1:NOM/NN/NOUN+CASE_DEF_ACC			=> *-ACC 1:0
+M1 @NP@ 1:NOM/NN/NOUN+CASE_INDEF_ACC			=> *-ACC 1:0
+M1 @NP@ 1:NOM/NN/NOUN+NSUFF_FEM_SG+CASE_DEF_ACC		=> *-ACC 1:0
+M1 @NP@ 1:NOM/NN/NOUN+NSUFF_FEM_SG+CASE_INDEF_ACC		=> *-ACC 1:0
+
+
+M1 @NP@ 1:NP-DEM 2:NP		=> * 1:2,MOD 2:0
+
+M1 @NP@ 1:NOM			=> * 1:0
+
+;; error?
+M1 @NP@ 1:VRB .. 2:NP		=> * 1:0 2:1,IDF
+M1 @NP@ 1:NP-TPC-SBJ .. 2:VP	=> * 1:2,SBJ 2:0
+
+M1 @NP@ 1:NP .. 2:NP		=> * 1:0 2:1,MOD
+
+M1 @NP@ 1:NP-ADV .. 2:SBAR	=> * 1:2,MOD 2:0
+M1 @NP@ 1:NP .. 2:SBAR		=> * 1:0 2:1,MOD
+M1 @NP@ 1:NP .. 2:ADVP		=> * 1:0 2:1,MOD
+M1 @NP@ 1:NP .. 2:S		=> * 1:0 2:1,MOD
+M1 @NP@ 1:S-NOM .. 2:NP		=> * 1:0 2:1,MOD
+M1 @NP@ 1:SBAR-NOM .. 2:NP		=> * 1:0 2:1,MOD
+
+M1 @NP@ 1:NP			=> * 1:0
+M1 @NP@ 1:ADJP			=> * 1:0
+M1 @NP@ 1:S-NOM			=> * 1:0
+M1 @NP@ 1:FRAG			=> * 1:0
+M1 @NP@ 1:SBAR			=> * 1:0
+M1 @NP@ 1:ADVP			=> * 1:0
+M1 @NP@ 1:WHADVP			=> * 1:0
+
+A1 @NP@ 1:!!NOM 2:NP-ACC		=> * 1:0 2:1,TMZ
+A1 @NP@ 1:!!NOM 2:NP		=> * 1:0 2:1,IDF
+A1 @NP@ 1:!!NOM 2:SBAR		=> * 1:0 2:1,IDF
+A1 @NP@ 1:!!NOM 2:S		=> * 1:0 2:1,IDF
+
+A1 @NP@ 1:!!NOM 2:PNX 3:NP	=> * 1:0 2:3,MOD 3:1,IDF
+A1 @NP@ 1:!!NOM 2:PNX 3:SBAR	=> * 1:0 2:3,MOD 3:1,IDF
+A1 @NP@ 1:!!NOM 2:PNX 3:S		=> * 1:0 2:3,MOD 3:1,IDF
+An @NP@ 1:!!NOM  .. 2:NOM	=> * 1:0 2:1,MOD
+An @NP@ 1:!!PROP .. 2:NOM	=> * 1:0 2:1,MOD
+
+A1 @NP@ 1:!!NOM 2:VP		=> * 1:0 2:1,MOD
+
+An @NP@ 1:!! .. 2:ADJP		=> * 1:0 2:1,MOD
+An @NP@ 1:!! .. 2:VRB		=> * 1:0 2:1,MOD
+
+
+An @NP@ 1:PRT/DT/DET .. 2:!!	=> * 1:2,MOD 2:0
+
+
+M1 WHNP 1:NOM/WP 2:NP 			=> * 1:0 2:1,IDF
+M1 WHNP 1:NOM/WP			=> * 1:0
+M1 WHADVP 1:NOM/WRB			=> * 1:0
+
+
+
+;;ADVP
+;;( 7 - , 5 6 - 2)//( 7 - , 6 6 - 2)//( 6 - , 4 7 - 5)//( 6 - , 1 6 - 0)
+;;( 6 - , 0 6 - , 1)//( 6 - , 3 6 - , 3)//( 6 - , 1 6 - , 0)//( 6 - , 0 6 - , 0)
+;;( 25 - , 14)//( 19 - , 25)//( 20 - , 25)//( 2 - , 1)
+;;( 6 , 2 62)//( 15 , 11 156)//( 11 , 8 117)
+;;( 6 , 4 76 -LRB- 75 -RRB-)//( 6 , 3 76 -LRB- 73 -RRB-)
+;;( 2 , 2)//( 55 , 0)//( 46 , 2)//( 32 - 16)
+;;( -LRB- 73 -RRB-)
+
+;;( 27 nqTp)//( 17 nqTp)
+M1 ADVP 1:NOM/NN/NOUN_NUM 2:NP-ACC	=> * 1:0 2:1,TMZ
+
+M1 ADVP 1:NOM/RB			=> * 1:0
+M1 ADVP 1:NOM/NN/NOUN_NUM		=> * 1:0
+M1 ADVP 1:!! .. 2:NOM			=> * 1:0 2:1,MOD
+
+
+M1 PRT 1:PRT/UH/VOC_PART	=> PRT-VOC 1:0
+M1 PRT 1:PRT			=> * 1:0
+
+
+
+M1 NAC 1:S	=> * 1:0
+M1 NAC 1:VP	=> * 1:0
+M1 NAC 1:NP	=> * 1:0
+M1 NAC 1:SBAR	=> * 1:0
+M1 NAC 1:PP	=> * 1:0
+M1 NAC 1:ADJP	=> * 1:0
+M1 NAC 1:ADVP	=> * 1:0
+M1 NAC 1:WHADVP	=> * 1:0
+
+M1 UCP 1:@XP@ .. 2:@XP@ .. 3:@XP@  => * 1:0 2:1,MOD 3:2,MOD
+M1 UCP 1:@XP@ .. 2:@XP@    => * 1:0 2:1,MOD
+M1 UCP 1:S	=> * 1:0
+M1 UCP 1:VP	=> * 1:0
+M1 UCP 1:NP	=> * 1:0
+M1 UCP 1:SBAR	=> * 1:0
+M1 UCP 1:PP	=> * 1:0
+M1 UCP 1:ADJP	=> * 1:0
+M1 UCP 1:ADVP	=> * 1:0
+M1 UCP 1:WHADVP	=> * 1:0
+
+
+M1 X 1:PNX 2:PNX    	=> * 1:0 2:1,---
+M1 X 1:PNX 2:PNX 3:PNX	=> * 1:0 2:1,--- 3:2,---
+
+
+
+;; FRAGMENT
+
+
+;;  mwskw >fAdt // lbnAn :  yEd
+;M1 FRAG 1:NP .. 2:S	=> * 1:0 2:1,MOD
+M1 FRAG 1:LST .. 2:S	=> * 1:0 2:1,MOD
+;M1 FRAG 1:NP  		=> * 1:0
+M1 FRAG 1:VP		=> * 1:0
+
+M1 FRAG 1:WHNP ..  2:S		=> SBAR 1:0 2:1,MOD
+
+
+M1 * 1:PNX     => * 1:0
+
+;; ADD-ONS
+
+DEFINE @MOD@ (PP|WHPP|ADVP|NP-ADV|S-ADV|SBAR-ADV|UCP-ADV|WHADVP|NP-TMP|SBAR-NOM-TMP|SBAR-TMP|S-TMP|UCP-TMP|NP-LOC|UCP-LOC|NP-PRP|SBAR-PRP|UCP-PRP|UCP-MNR|NAC|FRAG|PRN|INTJ|SBAR|NP-MNR|NP-VOC|SBARQ|UCP|X|NP)
+
+;;( zAr w+ yzwr , kmA yzwr .)
+A1 * 1:!! .. 2:@CC@ 3:S	   =>	* 1:0 2:1,MOD 3:2,OBJ
+
+A1 * ^ 1:CONJP .. 2:!!  		=> * 1:2,MOD 2:0
+
+An * 1:PRT .. 2:!!  		=> * 1:2,MOD 2:0
+An * 1:!!  .. 2:PRT  	     	=> * 1:0 2:1,MOD
+
+An * 1:@MOD@  .. 2:!!  	     	=> * 1:2,MOD 2:0
+An * 1:!!  .. 2:@MOD@  	     	=> * 1:0 2:1,MOD
+
+An * 1:PNX .. 2:!!  	     	=> * 1:2,MOD 2:0
+An * 1:!!  .. 2:PNX  	     	=> * 1:0 2:1,MOD
+
+An * 1:LST .. 2:!!  	     	=> * 1:2,MOD 2:0
+
+An * 1:NP-TPC-SBJ 2:!!		=> * 1:2,SBJ 2:0

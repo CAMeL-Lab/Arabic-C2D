@@ -1,0 +1,25 @@
+LICENSE
+//////////////////////////////////////////////////////////////////////////////
+// C2D-v0.8 Constituency to Dependency mapper
+// Copyright (c) 2009-2013 Columbia University in the City of New York
+// Copyright (c) 2014-2021 New York University Abu Dhabi
+//
+// Please do not distribute to anyone else without written permission
+// from authors.
+//
+// This resource is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+//
+// The licensed use of this resource is restricted to research purposes only.
+// To use it as part of a commercial product or as part of the development of
+// a commercial product is prohibited. Please contact authors for a commercial
+// license.
+//
+//
+// For more information, bug reports, fixes, contact:
+//    Nizar Habash
+//    Computational Approaches to Modeling Language Lab
+//    New York University Abu Dhabi
+//    nizar.habash@nyu.edu
+/////////////////////////////////////////////////////////////////////////////
